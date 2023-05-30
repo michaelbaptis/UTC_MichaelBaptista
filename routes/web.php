@@ -17,18 +17,10 @@ use App\Models\User;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-// Route::get('/{id}',[BookController::class,'index']);
-// Route::get('/{id}/category/{idCategory}', [CategoryController::class, 'show']);
-// Route::get('/{id}/contact', function($id){
-//     $user = User::find($id);
-//     return view("contact" ,compact("user"));
+// Route::get('/', function () {
+//     return view('home');
 // });
-// Route::get('/{id}/detail/{idBook}', [BookController::class, 'show']);
-// Route::post('/buyBooks',[TransactionController::class, 'store']);
-// Route::get("/{id}/transaction", [TransactionController::class, 'index']);
-// Route::get("/", [DetailController::class, 'index']);
+
+Route::get('/', [PostController::class, 'index']);
+Route::get('/post/{id}', [PostController::class, 'show']);
 
