@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Post;
 use Faker\Factory as Faker;
 
+
 class PostSeeder extends Seeder
 {
     /**
@@ -22,11 +23,11 @@ class PostSeeder extends Seeder
             $countParagraph = $faker->numberBetween(1, 10);
 
             if($countParagraph >= 7){
-                $category_id = 3;
+                $id = 3;
             } elseif($countParagraph >= 4){
-                $category_id = 2;
+                $id = 2;
             } else{
-                $category_id = 1;
+                $d = 1;
             }
 
             Post::create([
@@ -34,7 +35,7 @@ class PostSeeder extends Seeder
                 'description' => $faker->paragraph(),
                 'author' => $faker->name(),
                 'date' => $faker->date(),
-                'category_id' => $category_id,
+                'category_id' => $id,
                 'body' => $this->breakParagraphToHTML($faker->paragraphs($countParagraph)),
                 'image' => $faker->imageUrl(600, 400,null ,true),
                 'ratingcount' => $faker->numberBetween(1,200),

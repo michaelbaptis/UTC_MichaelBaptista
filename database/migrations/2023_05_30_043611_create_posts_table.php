@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('author');
             $table->date('date');
-            $table->foreignId('category_id')->references('id')->on('categories');
+            $table->foreignId('id')->references('id')->on('categories');
             $table->text('body');
             $table->string('image');
             $table->integer('ratingcount'); // Ini untuk most highlighted by owner

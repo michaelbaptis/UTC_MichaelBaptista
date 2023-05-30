@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index(){
         $all = Post::all();
-        $highlightPost = Post::orderBy('ratingcount', 'desc')->take(1)->get()[0];
+        $highlightPost = Post::orderBy('ratingcount', 'desc')->take(1)->get();
         $latestPosts = Post::latest()->take(4)->get();
 
         return view('home', [
@@ -21,6 +21,7 @@ class PostController extends Controller
 
     public function show($id){
         $post = Post::find($id);
+
         return view('detail', [
             'post' => $post
         ]);
